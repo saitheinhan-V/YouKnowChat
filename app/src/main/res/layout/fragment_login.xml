@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/tv_topic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_topic"
+        android:textSize="35sp"
+        android:textColor="@color/normal_text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/countryAndPhoneInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_topic"
+        android:layout_marginTop="70dp"
+        android:weightSum="2"
+        >
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            >
+
+            <TextView
+                android:id="@+id/countryTextView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_height"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingEnd="5dp"
+                android:text="@string/country"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:enabled="true"
+                android:drawableEnd="@drawable/ic_down_arrow"
+                android:textSize="@dimen/normal_text_size"
+                android:background="@drawable/text_input_outline_grey"
+                />
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneNumberTextInputLayout"
+            style="@style/TextInputLayoutStyle"
+            android:paddingVertical="@dimen/text_input_padding_vertical"
+            android:layout_weight="1.3"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_height"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:nextFocusDown="@id/passwordEditText"
+                android:textSize="@dimen/normal_text_size" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordTextInputLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        style="@style/TextInputLayoutStyle"
+        android:layout_marginTop="5dp"
+        android:paddingVertical="@dimen/text_input_padding_vertical"
+        app:passwordToggleEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countryAndPhoneInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_input_height"
+            android:layout_marginBottom="@dimen/margin_bottom_5"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:textSize="@dimen/normal_text_size" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_height="@dimen/button_height"
+        style="@style/loginButtonStyle"
+        android:layout_marginTop="@dimen/margin_16"
+        android:text="@string/login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

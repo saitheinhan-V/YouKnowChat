@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.chat.ChatActivity">
+
+    <RelativeLayout
+        android:id="@+id/backLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/button_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_back_white"
+            />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivBack"
+            android:text="Title"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/normal_text_size"
+            android:layout_marginStart="10dp"
+            />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChat"
+        android:layout_above="@id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backLayout"
+        />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+        android:paddingStart="10dp"
+        android:weightSum="100"
+        android:background="@color/green15"
+        android:elevation="10dp">
+
+        <EditText
+            android:id="@+id/edtMessage"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="90"
+            android:hint="Type something"
+            android:background="@drawable/message_box_background"
+            android:paddingLeft="10dp"
+            />
+
+        <ImageView
+            android:id="@+id/sendButton"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_weight="10"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/send" />
+    </LinearLayout>
+
+</RelativeLayout>
